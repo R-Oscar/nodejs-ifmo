@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        zoom: 125%;
+      }
+    </style>
+  </head>
+  <body>
+    <input name="fff" id="fff" type="file" /> <button id="upload">Загрузить</button>
+    <script>
+      const tf = document.querySelector('[type=file]');
+
+      document.querySelector('#upload').onclick = async function() {
+        let r = await fetch('http://localhost:1234', {
+          method: 'POST',
+          body: tf.files[0]
+        });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(await r.blob());
+        a.download = 'output.gz';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      };
+    </script>
+  </body>
+</html>
