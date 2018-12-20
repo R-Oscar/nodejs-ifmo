@@ -16,4 +16,4 @@ $ yarn
 $ node index.js
 ```
 
-Скрипт подключается к [Yahoo.Weather API](https://developer.yahoo.com/weather/?guccounter=1) и считывает информацию о погоде в городе Санкт-Петербург на завтрашний (нижняя граница температуры)
+Скрипт подключается к [Yahoo.Weather API](https://developer.yahoo.com/weather/?guccounter=1) и считывает информацию о погоде в городе Санкт-Петербург на завтрашний день (нижняя граница температуры)
